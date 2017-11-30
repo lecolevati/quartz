@@ -27,7 +27,7 @@ public class QuartzListener implements ServletContextListener {
 					.withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(5).repeatForever())
 					.build();
 
-			Scheduler scheduler = new StdSchedulerFactory().getScheduler();
+			scheduler = new StdSchedulerFactory().getScheduler();
 			scheduler.start();
 			scheduler.scheduleJob(job, trigger);
 		} catch (SchedulerException e) {
